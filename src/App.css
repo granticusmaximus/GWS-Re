@@ -62,6 +62,8 @@
   background-color: black;
 }
 
+
+
 .dashboard div {
   margin-top: 7px;
 }
@@ -262,11 +264,9 @@ code {
 }
 
 .footer--pin {
-  position: relative;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  z-index: 0;
+  bottom: 0;
+  position: bottom;
 }
 
 footer {
@@ -276,6 +276,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  bottom: 0;
+  position: bottom;
 }
 
 footer div {

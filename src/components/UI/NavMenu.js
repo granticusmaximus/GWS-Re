@@ -8,6 +8,7 @@ class NavMenu extends Component {
     return (
         <div>
         <Navbar
+          fixed="top"
           expand="lg"
           style={{
             maxHeight: '75px',

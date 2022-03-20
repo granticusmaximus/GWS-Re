@@ -4,8 +4,7 @@ import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
 import webhost from '../../assets/img/webhost.jpeg'
-import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
-import Footer from '../UI/Footer';
+  import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
 import GitHubCalendar from 'react-github-calendar';
 import Image from "react-bootstrap/Image";
 import ImageGrid from '../UI/ProgImgGrid';
@@ -21,7 +20,7 @@ function Home() {
         <h1>
           If you have not guessed it, my name is Grant Watson and I am a freelance software engineer for hire. To see my resume: 
         </h1>
-        <a href={pdf} className="btn btn-primary">Click Here</a>
+        <a href={pdf} rel="noreferrer" target="_blank" className="btn btn-primary">Click Here</a>
         <hr/>
         <p>
         I am on Upwork as well! If you have a project that you wish for me to start working on through UpWork, <a href='https://www.upwork.com/freelancers/~017cb997c760da76e7' rel="noreferrer" target="_blank">hire me</a> there!
@@ -116,7 +115,7 @@ function Home() {
         <ImageGrid />
         <hr />
         
-        <Footer/>
+
      
     </div>
   );
