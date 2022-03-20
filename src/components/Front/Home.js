@@ -7,13 +7,16 @@ import webhost from '../../assets/img/webhost.jpeg'
 import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
 import Footer from '../UI/Footer';
 import GitHubCalendar from 'react-github-calendar';
+import Image from "react-bootstrap/Image";
 import ImageGrid from '../UI/ProgImgGrid';
+import logo from '../../assets/img/logo.png'
 
 function Home() {
 
   return (
     <div className="App">
         <br />
+      <Image src={logo} width={175} roundedCircle />
         <h3>Welcome to my website!</h3>
         <h1>
           If you have not guessed it, my name is Grant Watson and I am a freelance software engineer for hire. To see my resume: 
