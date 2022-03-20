@@ -4,8 +4,10 @@ import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
 import webhost from '../../assets/img/webhost.jpeg'
+import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
 import Footer from '../UI/Footer';
 import GitHubCalendar from 'react-github-calendar';
+import ImageGrid from '../UI/ProgImgGrid';
 
 function Home() {
 
@@ -85,14 +87,30 @@ function Home() {
         <center>
           <GitHubCalendar username="granticusmaximus"  hideTotalCount hideColorLegend/>
         </center>
-        <hr />
-        <br/>
         <hr/>
-        <p>Call To Action Section</p> 
-        <hr />
-        <br/>
+        <Row>
+          <Col>
+            <img src={softwareDev} height={400} width={500} />
+          </Col>
+          <Col>
+            <p>
+              It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference. I am passionate about building better technology.
+            </p>
+            <p>
+              My job is to get you the web app, desktop app, or mobile app of your dreams so that you can start building your business. I am here to listen to you, hear your dreams and ideas, and build them into your dynasty. 
+            </p>
+            <a href='/contact' className='btn btn-outline-warning'>Get Online Today!</a>
+          </Col>
+        </Row>
         <hr/>
-        <p>Languages I have worked with section</p> 
+        <div className='jumbotron jumbotron-fluid'>
+          <h3
+            style={{ color: 'white' }}
+          >
+            Languages I have worked with section
+          </h3>
+        </div> 
+        <ImageGrid />
         <hr />
         
         <Footer/>

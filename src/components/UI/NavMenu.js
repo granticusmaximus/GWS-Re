@@ -10,8 +10,9 @@ class NavMenu extends Component {
         <Navbar
           expand="lg"
           style={{
-            maxHeight: '100px',
-            backgroundColor: '#4d4d4d'
+            maxHeight: '75px',
+            backgroundColor: '#4d4d4d',
+            boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
           }}
         >
             <Container fluid>
