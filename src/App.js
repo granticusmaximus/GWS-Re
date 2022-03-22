@@ -49,7 +49,9 @@ function App() {
             </AuthProvider>
         </Router>
       </Container>
-      <Footer />
+      <div className='bottom'>
+        <Footer />
+      </div>
     </div>
   );
 }

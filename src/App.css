@@ -1,5 +1,37 @@
+.btn-send {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  width: 80%;
+  margin-left: 3px
+}
+
+.help-block.with-errors {
+  color: #ff5050;
+  margin-top: 5px
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.bottom {
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  width: 100%;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
+  padding-top: 32px;
+  width: 94%;
 }
 
 .App-logo {
@@ -69,12 +101,11 @@
 }
 
 body {
+  position: relative;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 code {
@@ -263,40 +294,13 @@ code {
   margin-top: 7px;
 }
 
-.footer--pin {
-  width: 100%;
+.footer {
+  position: absolute;
+  right: 0;
   bottom: 0;
-  position: bottom;
-}
-
-footer {
-  background-color: #4d4d4d;
-  padding: 5px 10px;
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  bottom: 0;
-  position: bottom;
-}
-
-footer div {
-  background-color: #950707;
-  border-radius: 30px;
-  width: 65px;
-  height: 10px;
-}
-
-footer p {
-  color: #e3c893;
-  font-family: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
+  left: 0;
+  margin-top: -100px;
+  padding: 1rem;
+  background-color: #efefef;
   text-align: center;
-}
-
-footer ul li {
-  background-color: #950707;
-  border-radius: 30px;
-  width: 15px;
-  height: 15px;
 }

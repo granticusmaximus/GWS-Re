@@ -1,51 +1,55 @@
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
+import { Col } from 'react-bootstrap';
 
-const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
+export default function Contact() {
 
-  const submit = () => {
-      if (name && email && message) {
-          const serviceId = 'service_libv1nq';
-          const templateId = 'template_qbxfxcz';
-          const userId = 'QUnmkZs8gBchyu6ck';
-          const templateParams = {
-              name,
-              email,
-              message
-          };
+  function sendEmail(e) {
+    e.preventDefault();
 
-          emailjs.send(serviceId, templateId, templateParams, userId)
-              .then(response => console.log(response))
-              .then(error => console.log(error));
-
-          setName('');
-          setEmail('');
-          setMessage('');
-          setEmailSent(true);
-      } else {
-          alert('Please fill in all fields.');
-      }
+    emailjs.sendForm('service_libv1nq', 'template_qbxfxzc', e.target, 'QUnmkZs8gBchyu6ck')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
 
   return (
-    <div className='container'>
+    <div>
       <br />
       <br />
-      <div id="contact-form">
-          <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
-          <input type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)} />
-          <textarea placeholder="Your message" value={message} onChange={e => setMessage(e.target.value)}></textarea>
-          <button onClick={submit}>Send Message</button>
-
-          <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span>
-      </div>
+      <hr />
+      <center>
+        <div className='card'>
+        <h1>Contact Form</h1>
+        <p>
+          Use the form below to share your questions, ideas, comments and feedback
+        </p>
+        <form id="contact-form" role="form" onSubmit={sendEmail}>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input id="form_name" type="text" name="from_name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required." />
+              </div>
+              <div class="form-group">
+                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required." />
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-12">
+              <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea> 
+            </div>
+          </div>
+          <br />
+          <div class="col-md-12">
+              <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Send Message"/>
+            </div>
+        </form>
+        </div>
+      </center>
     </div>
-     
   );
-};
-
-export default Contact;
+}
