@@ -16,6 +16,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import Axios from 'axios'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBrFrkL6xHuUqLZs5uE2zlMgHFModT5aW0",
@@ -101,4 +102,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logout,
+  Axios,
 };

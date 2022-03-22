@@ -8,6 +8,7 @@ class About extends Component {
   render() {
     return (
       <div>
+        <br/>
         <hr/>
         <center>
           <h1>

@@ -15,6 +15,7 @@ import {Container} from 'react-bootstrap'
 import Reset from './components/User/Reset'
 import About from './components/Front/About'
 import Footer from './components/UI/Footer'
+import Contact from './components/Front/Contact';
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
                 <Route path='/verify-email' element={<VerifyEmail />} /> 
                 <Route path='/reset' element={<Reset/>} />
                 <Route path='/dashboard' element={<Dashboard />} />
-                <Route path='/about' element={<About/>} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact/>} />
               </Routes>  
             </AuthProvider>
         </Router>
