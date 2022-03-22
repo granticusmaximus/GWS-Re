@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import pdf from '../../assets/pdf/gwresume.pdf'
 import aboutPic from '../../assets/img/grantnwife.jpeg'
+import CertificateGrid from '../UI/CertImages';
 
 class About extends Component {
   render() {
@@ -34,6 +35,9 @@ class About extends Component {
           <Col>
             <img src={aboutPic} width={400} />
           </Col>
+        </Row>
+        <Row>
+          <CertificateGrid />
         </Row>
       </div>
     );

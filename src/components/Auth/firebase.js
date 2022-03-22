@@ -18,9 +18,9 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-
   apiKey: "AIzaSyBrFrkL6xHuUqLZs5uE2zlMgHFModT5aW0",
   authDomain: "gwsportfolio-22107.firebaseapp.com",
+  databaseURL: "https://gwsportfolio-22107-default-rtdb.firebaseio.com",
   projectId: "gwsportfolio-22107",
   storageBucket: "gwsportfolio-22107.appspot.com",
   messagingSenderId: "252850825468",
