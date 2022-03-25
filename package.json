@@ -27,6 +27,7 @@
     "react-firebase-hooks": "^5.0.3",
     "react-github-calendar": "^3.2.2",
     "react-grid-gallery": "^0.5.5",
+    "react-hook-form": "^7.28.1",
     "react-image-viewer-dv": "^1.0.2",
     "react-pdf": "^5.7.1",
     "react-router-dom": "^6.2.2",

@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import pdf from '../../assets/pdf/gwresume.pdf'
 import aboutPic from '../../assets/img/grantnwife.jpeg'
 import CertificateGrid from '../UI/CertImages';
+import { ImageViewer } from "react-image-viewer-dv"
 
 class About extends Component {
   render() {
@@ -34,7 +35,9 @@ class About extends Component {
             </p>
           </Col>
           <Col>
-            <img src={aboutPic} width={400} />
+            <ImageViewer>
+              <img src={aboutPic} width={400} />
+            </ImageViewer>
           </Col>
         </Row>
         <Row>

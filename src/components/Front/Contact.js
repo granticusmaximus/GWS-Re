@@ -2,22 +2,27 @@ import React, { Component } from 'react'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useForm } from "react-hook-form";
 
-class Contact extends Component {
-  notify = () => toast.success("Email has been sent!");
-
-  sendEmail = (e) => {
+export default function Contact() {
+  const notify = () => toast.success("Email has been sent!");
+  const nodFunct = async () => {
+    await notify(5000);
+    console.log("Reloading Page with interesting features, please hold");
+    window.location.reload(false);
+  };
+  const sendEmail = (e) => {
     e.preventDefault();
     
-    emailjs.sendForm('service_libv1nq', 'template_qbxfxzc', e.target, 'QUnmkZs8gBchyu6ck')
+    emailjs.sendForm('service_libv1nq', 'template_qbxfxzc', e.target, 'QUnmkZs8gBchyu6ck', e)
       .then((result) => {
           console.log(result.text);
       }, (error) => {
           console.log(error.text);
       });
-    this.setState(() => this.initialState)
+    
   }
-  render() {
+
     return (
       <div>
         <br />
@@ -29,7 +34,7 @@ class Contact extends Component {
             <p>
               Use the form below to share your questions, ideas, comments and feedback
             </p>
-            <form id="contact-form" role="form" onSubmit={this.sendEmail}>
+            <form id="contact-form" role="form" onSubmit={sendEmail}>
               <div className="row">
                 <div className="col-md-12">
                   <div className="form-group">
@@ -75,7 +80,7 @@ class Contact extends Component {
                   <input
                     type="submit"
                     className="btn btn-success btn-send pt-2 btn-block "
-                    onClick={this.notify}
+                    onClick={nodFunct}
                     value="Send Message" />
                 </div>
               </div>
@@ -85,7 +90,5 @@ class Contact extends Component {
         </center>
         <ToastContainer />
       </div>
-    )
-  }
+  );
 }
-export default Contact

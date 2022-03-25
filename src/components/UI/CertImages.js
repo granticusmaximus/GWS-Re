@@ -27,10 +27,13 @@ class CertificateGrid extends Component {
             <ImageViewer>
               <img src={mvc} width={400}/>
             </ImageViewer>
-            <ImageViewer>
-              <img src={reactCourse} width={400}/>
-            </ImageViewer>
+            
           </Col>
+        </Row>
+        <Row>
+          <ImageViewer>
+                <img src={reactCourse} width={1050}/>
+          </ImageViewer>
         </Row>
       </div>
     );

@@ -34,7 +34,7 @@ function Home() {
         <center>
           <Row>
               <Col>
-                <Card style={{ width: '18rem' }}>
+                <Card className="home" style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={ux} />
                   <Card.Body>
                     <Card.Title>Web Design</Card.Title>

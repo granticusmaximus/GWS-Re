@@ -12,7 +12,7 @@ class NavMenu extends Component {
           expand="lg"
           style={{
             maxHeight: '75px',
-            backgroundColor: '#4d4d4d',
+            backgroundColor: '#94633b',
             boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
           }}
         >
