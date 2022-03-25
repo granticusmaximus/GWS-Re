@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import MenuGreeting from '../Auth/UserAuthButton';
 
 
@@ -71,11 +71,6 @@ class NavMenu extends Component {
                 >
                   Blog
                 </Nav.Link>
-                  {/* <MenuGreeting />
-                  <NavDropdown title="Dropdown Link" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                  </NavDropdown> */}
                 </Nav>
                 <Nav>
                   <Navbar.Collapse className="justify-content-end">
