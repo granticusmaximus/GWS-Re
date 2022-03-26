@@ -16,6 +16,7 @@ import Reset from './components/User/Reset'
 import About from './components/Front/About'
 import Footer from './components/UI/Footer'
 import Contact from './components/Front/Contact';
+import Project from './components/Front/Projects';
 
 function App() {
 
@@ -44,7 +45,8 @@ function App() {
                 <Route path='/reset' element={<Reset/>} />
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact/>} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/projects' element={<Project/>} />
               </Routes>  
             </AuthProvider>
         </Router>

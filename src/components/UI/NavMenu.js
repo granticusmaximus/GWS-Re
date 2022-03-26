@@ -56,12 +56,12 @@ class NavMenu extends Component {
                   Contact
                 </Nav.Link>
                 <Nav.Link
-                  href="/about"
+                  href="/projects"
                   style={{
                     color: 'white'
                   }}
                 >
-                  Portfolio
+                  Projects
                 </Nav.Link>
                 <Nav.Link
                   href="/blog"

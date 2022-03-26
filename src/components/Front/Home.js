@@ -1,19 +1,23 @@
-import { Row, Col, Container, Card } from 'react-bootstrap';
+import { Row, Col, Container, Card } from 'react-bootstrap'
 import '../../App.css';
 import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
 import webhost from '../../assets/img/webhost.jpeg'
-  import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
+import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
 import GitHubCalendar from 'react-github-calendar';
-import Image from "react-bootstrap/Image";
-import ImageGrid from '../UI/ProgImgGrid';
+import Image from "react-bootstrap/Image"
+import ImageGrid from '../UI/ProgImgGrid'
 import logo from '../../assets/img/logo.png'
+import { NextSeo } from 'next-seo'
 
 function Home() {
 
   return (
     <div className="App">
+      <NextSeo
+          title="GWS Home Page"
+      />
         <br />
       <Image src={logo} width={175} roundedCircle />
         <h3>Welcome to my website!</h3>

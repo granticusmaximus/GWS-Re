@@ -1,3 +1,13 @@
+html {
+  min-height: 100%;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .btn-send {
   font-weight: 300;
   text-transform: uppercase;
