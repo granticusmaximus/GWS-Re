@@ -4,15 +4,11 @@ import pdf from '../../assets/pdf/gwresume.pdf'
 import aboutPic from '../../assets/img/grantnwife.jpeg'
 import CertificateGrid from '../UI/CertImages';
 import { ImageViewer } from "react-image-viewer-dv"
-import { NextSeo } from 'next-seo';
 
 class About extends Component {
   render() {
     return (
       <div>
-        <NextSeo
-          title="About Grant Watson"
-        />
         <center>
           <br/>
           <hr/>

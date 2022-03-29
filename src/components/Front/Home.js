@@ -9,15 +9,11 @@ import GitHubCalendar from 'react-github-calendar';
 import Image from "react-bootstrap/Image"
 import ImageGrid from '../UI/ProgImgGrid'
 import logo from '../../assets/img/logo.png'
-import { NextSeo } from 'next-seo'
 
 function Home() {
 
   return (
     <div className="App">
-      <NextSeo
-          title="GWS Home Page"
-      />
         <br />
       <Image src={logo} width={175} roundedCircle />
         <h3>Welcome to my website!</h3>

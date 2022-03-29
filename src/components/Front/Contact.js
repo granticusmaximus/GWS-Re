@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { NextSeo } from 'next-seo'
 
 export default function Contact() {
   const notify = () => toast.success("Email has been sent!");
@@ -25,9 +24,6 @@ export default function Contact() {
 
     return (
       <div>
-        <NextSeo
-          title="Contact Grant Watson"
-        />
         <br />
         <br />
         <hr />
