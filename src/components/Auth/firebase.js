@@ -16,7 +16,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
-import Axios from 'axios'
+import database from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBrFrkL6xHuUqLZs5uE2zlMgHFModT5aW0",
@@ -28,6 +28,7 @@ const firebaseConfig = {
   appId: "1:252850825468:web:8869404ba1e2c272f1cf79",
   measurementId: "G-KBRYKCTHH1"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -102,5 +103,4 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logout,
-  Axios,
 };
