@@ -8,8 +8,6 @@ import Login from './components/User/Login'
 import Home from './components/Front/Home'
 import {useState, useEffect} from 'react'
 import {AuthProvider} from './components/Auth/AuthContext'
-import {auth} from './components/Auth/firebase'
-import {onAuthStateChanged} from 'firebase/auth'
 import NavMenu from './components/UI/NavMenu'
 import {Container} from 'react-bootstrap'
 import Reset from './components/User/Reset'
@@ -17,17 +15,16 @@ import About from './components/Front/About'
 import Footer from './components/UI/Footer'
 import Contact from './components/Front/Contact';
 import Project from './components/Front/Projects';
+import Edit from './components/Blog/Edit'
+import Show from './components/Blog/Show'
+import List from './components/Blog/List'
+import CreatePost from './components/Blog/Create'
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user)
-    })
-  }, [])
 
   return (
     
@@ -46,7 +43,11 @@ function App() {
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/projects' element={<Project/>} />
+                <Route path='/projects' element={<Project />} />
+                <Route path='/blog/edit/:id' component={Edit} />
+                <Route path='/blog/create' component={CreatePost} />
+                <Route path='/blos' component={List} />
+                <Route path='/blog/show/:id' component={Show} />
               </Routes>  
             </AuthProvider>
         </Router>

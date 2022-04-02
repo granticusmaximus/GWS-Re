@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import "../../App.css";
 import { auth, db, logout } from "../Auth/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -40,6 +41,7 @@ function Dashboard() {
         <button className="dashboard__btn" onClick={logout}>
           Logout
         </button>
+        <Link to="/blog/create">Add Post</Link>
       </div>
     </div>
   );
