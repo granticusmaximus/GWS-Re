@@ -23,21 +23,23 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { title, content, dateModified, author } = this.state;
+    const { title, content, dateModified, imageURL, author } = this.state;
 
     this.ref.add({
       title,
       content,
-      dateModifieddateModifieddateModifieddateModified,
+      dateModified,
+      imageURL,
       author
     }).then((docRef) => {
       this.setState({
         title: '',
         content: '',
+        imageURL: '',
         dateModified: '',
         author: ''
       });
-      this.props.history.push("/")
+      this.props.history.push("/dashboard")
     })
     .catch((error) => {
       console.error("Error adding post: ", error);
@@ -45,7 +47,7 @@ class Create extends Component {
   }
 
   render() {
-    const { title, content, dateModified, author } = this.state;
+    const { title, content, dateModified, imageURL, author } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -55,19 +57,23 @@ class Create extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/" class="btn btn-primary">Book List</Link></h4>
+            <h4><Link to="/blog" class="btn btn-primary">Back to Blog</Link></h4>
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" name="title" value={title} onChange={this.onChange} placeholder="Title" />
               </div>
               <div class="form-group">
-                <label for="title">Date Created:</label>
+                <label for="dateModified">Date Created:</label>
                 <input type="date" class="form-control" name="dateModified" value={dateModified} onChange={this.onChange} placeholder="Date Created" />
               </div>
               <div class="form-group">
                 <label for="description">Content:</label>
                 <textArea class="form-control" name="content" onChange={this.onChange} placeholder="Enter Content Here" cols="80" rows="3">{content}</textArea>
+              </div>
+              <div class="form-group">
+                <label for="imageURL">Image Link:</label>
+                <input type="text" class="form-control" name="imageURL" value={imageURL} onChange={this.onChange} placeholder="Enter Image URL" />
               </div>
               <div class="form-group">
                 <label for="author">Author:</label>

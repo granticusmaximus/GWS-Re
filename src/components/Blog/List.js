@@ -16,13 +16,14 @@ class List extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {
-      const { title, content, author, dateModified } = doc.data();
+      const { title, content, author, imageURL, dateModified } = doc.data();
       posts.push({
         key: doc.id,
         doc, // DocumentSnapshot
         title,
         content,
         author,
+        imageURL,
         dateModified,
       });
     });
@@ -48,7 +49,7 @@ class List extends Component {
             
                 {this.state.posts.map(post =>
                   <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap" />
+                  <img class="card-img-top" src={imageURL} alt="Card image cap" />
                   <div class="card-body">
                     <h5 class="card-title">{post.title}</h5>
                     <p class="card-text">

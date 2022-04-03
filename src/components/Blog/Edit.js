@@ -11,6 +11,7 @@ class Edit extends Component {
       title: '',
       content: '',
       dateModified: '',
+      imageURL: '',
       author: ''
     };
   }
@@ -25,6 +26,7 @@ class Edit extends Component {
           title: post.title,
           content: post.content,
           dateModified: post.dateModified,
+          imageURL: post.imageURL,
           author: post.author
         });
       } else {
@@ -49,6 +51,7 @@ class Edit extends Component {
       title,
       content,
       dateModified,
+      imageURL,
       author
     }).then((docRef) => {
       this.setState({
@@ -56,6 +59,7 @@ class Edit extends Component {
         title: '',
         dateModified: '',
         content: '',
+        imageURL: '',
         author: ''
       });
       this.props.history.push("/blog/show/"+this.props.match.params.id)
@@ -82,12 +86,16 @@ class Edit extends Component {
                 <input type="text" class="form-control" name="title" value={this.state.title} onChange={this.onChange} placeholder="Title" />
               </div>
               <div class="form-group">
-                <label for="description">Date Updated:</label>
+                <label for="dateModified">Date Updated:</label>
                 <input type="date" class="form-control" name="dateModified" value={this.state.dateModified} onChange={this.onChange} placeholder="Update Content" />
               </div>
               <div class="form-group">
-                <label for="description">Content:</label>
-                <input type="text" class="form-control" name="description" value={this.state.content} onChange={this.onChange} placeholder="Update Content" />
+                <label for="content">Content:</label>
+                <input type="text" class="form-control" name="content" value={this.state.content} onChange={this.onChange} placeholder="Update Content" />
+              </div>
+              <div class="form-group">
+                <label for="imageURL">Image Link:</label>
+                <input type="text" class="form-control" name="imageURL" value={this.state.imageURL} onChange={this.onChange} placeholder="Update Image URL" />
               </div>
               <div class="form-group">
                 <label for="author">Author:</label>

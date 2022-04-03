@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import firebase from '../Auth/firebase';
+import firebase, { auth } from '../Auth/firebase';
 import { Link } from 'react-router-dom';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 class Show extends Component {
 
@@ -48,10 +49,14 @@ class Show extends Component {
           </div>
           <div class="panel-body">
             <dl>
+              <dt>Title:</dt>
+              <dd>{this.state.post.title}</dd>
               <dt>Author:</dt>
               <dd>{this.state.post.author}</dd>
               <dt>Date Modified:</dt>
               <dd>{this.state.post.dateModified}</dd>
+              <dt>Image:</dt>
+              <dd>{this.state.post.imageURL}</dd>
               <dt>Content:</dt>
               <dd>{this.state.post.content}</dd>
               
