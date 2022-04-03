@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { getAuth } from "../Auth/firebase";
+import { auth } from "../Auth/firebase";
 import logo from '../../assets/img/logo.png'
 
 function LoggedIn(props) {
@@ -12,7 +12,7 @@ function Guest(props) {
 }
 
 function MenuGreeting(props) {
-  const [user] = useAuthState(getAuth);
+  const [user] = useAuthState(auth);
   if (user) {
     return <LoggedIn />;
   } else {

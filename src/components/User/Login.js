@@ -1,55 +1,65 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword } from "../Auth/firebase";
+import { auth } from "../Auth/firebase";
+import { useAuthValue } from '../Auth/AuthContext'
+import { signInWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../../App.css";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('') 
+  const [error, setError] = useState('')
+  const {setTimeActive} = useAuthValue()
+  const navigate = useNavigate()
 
-  useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
+  const login = e => {
+    e.preventDefault()
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      if(!auth.currentUser.emailVerified) {
+        sendEmailVerification(auth.currentUser)
+        .then(() => {
+          setTimeActive(true)
+          navigate('/verify-email')
+        })
+      .catch(err => alert(err.message))
+    }else{
+      navigate('/')
     }
-    if (user) navigate("/dashboard");
-  }, [user, loading]);
+    })
+    .catch(err => setError(err.message))
+  }
 
-  return (
-    <div className="login">
-      <div className="login__container">
-        <input
-          type="text"
-          className="login__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="login__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button
-          className="login__btn"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
-        </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
-        </div>
+  return(
+    <div className='center'>
+      <div className='auth'>
+        <h1>Log in</h1>
+        {error && <div className='auth__error'>{error}</div>}
+        <form onSubmit={login} name='login_form'>
+          <input 
+            type='email' 
+            value={email}
+            required
+            placeholder="Enter your email"
+            onChange={e => setEmail(e.target.value)}/>
+
+          <input 
+            type='password'
+            value={password}
+            required
+            placeholder='Enter your password'
+            onChange={e => setPassword(e.target.value)}/>
+
+          <button type='submit'>Login</button>
+        </form>
+        <p>
+          Don't have and account? 
+          <Link to='/register'>Create one here</Link>
+        </p>
       </div>
     </div>
-  );
+  )
 }
 
 export default Login;

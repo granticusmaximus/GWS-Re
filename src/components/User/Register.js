@@ -1,67 +1,86 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  auth,
-  registerWithEmailAndPassword,
-  signInWithGoogle,
-} from "../Auth/firebase";
+import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
+import { auth } from "../Auth/firebase";
+import {useAuthValue} from '../Auth/AuthContext'
 import "../../App.css";
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
+  
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
+  const {setTimeActive} = useAuthValue()
 
-  const register = () => {
-    if (!name) alert("Please enter name");
-    registerWithEmailAndPassword(name, email, password);
-  };
+  const validatePassword = () => {
+    let isValid = true
+    if (password !== '' && confirmPassword !== ''){
+      if (password !== confirmPassword) {
+        isValid = false
+        setError('Passwords does not match')
+      }
+    }
+    return isValid
+  }
 
-  useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/dashboard");
-  }, [user, loading]);
+  const register = e => {
+    e.preventDefault()
+    setError('')
+    if(validatePassword()) {
+      // Create a new user with email and password using firebase
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          sendEmailVerification(auth.currentUser)   
+          .then(() => {
+            setTimeActive(true)
+            navigate('/verify-email')
+          }).catch((err) => alert(err.message))
+        })
+        .catch(err => setError(err.message))
+    }
+    setEmail('')
+    setPassword('')
+    setConfirmPassword('')
+  }
 
   return (
-    <div>
-      <br/>
-      <div className="register">
-      <div className="register__container">
-        <input
-          type="text"
-          className="register__textBox"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
-        />
-        <input
-          type="text"
-          className="register__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="register__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button className="register__btn" onClick={register}>
-          Register
-        </button>
-        <div>
-          Already have an account? <Link to="/login">Login</Link> now.
-        </div>
+    <div className='center'>
+      <div className='auth'>
+        <h1>Register</h1>
+        {error && <div className='auth__error'>{error}</div>}
+        <form onSubmit={register} name='registration_form'>
+          <input 
+            type='email' 
+            value={email}
+            placeholder="Enter your email"
+            required
+            onChange={e => setEmail(e.target.value)}/>
+
+          <input 
+            type='password'
+            value={password} 
+            required
+            placeholder='Enter your password'
+            onChange={e => setPassword(e.target.value)}/>
+
+            <input 
+            type='password'
+            value={confirmPassword} 
+            required
+            placeholder='Confirm password'
+            onChange={e => setConfirmPassword(e.target.value)}/>
+
+          <button type='submit'>Register</button>
+        </form>
+        <span>
+          Already have an account?  
+          <Link to='/login'>login</Link>
+        </span>
       </div>
     </div>
-    </div>
-    
-  );
+  )
 }
 
 export default Register;

@@ -1,9 +1,9 @@
 import '../../App.css'
-import {useAuthValue} from '../Auth/AuthContext'
-import {useState, useEffect} from 'react'
-import {auth} from '../Auth/firebase'
-import {sendEmailVerification} from 'firebase/auth'
-import {useNavigate} from 'react-router-dom'
+import { useAuthValue } from '../Auth/AuthContext'
+import { useState, useEffect } from 'react'
+import { auth } from '../Auth/firebase'
+import { sendEmailVerification } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 function VerifyEmail() {
 

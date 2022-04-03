@@ -1,5 +1,5 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Dashboard from './components/User/Dashboard'
 import Register from './components/User/Register'
@@ -13,18 +13,21 @@ import {Container} from 'react-bootstrap'
 import Reset from './components/User/Reset'
 import About from './components/Front/About'
 import Footer from './components/UI/Footer'
-import Contact from './components/Front/Contact';
-import Project from './components/Front/Projects';
-import Edit from './components/Blog/Edit'
-import Show from './components/Blog/Show'
-import List from './components/Blog/List'
-import CreatePost from './components/Blog/Create'
+import Contact from './components/Front/Contact'
+import Project from './components/Front/Projects'
+import {auth} from './components/Auth/firebase'
+import {onAuthStateChanged} from 'firebase/auth'
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user)
+    })
+  }, [])
 
   return (
     
@@ -44,10 +47,6 @@ function App() {
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/projects' element={<Project />} />
-                <Route path='/blog/edit/:id' component={Edit} />
-                <Route path='/blog/create' component={CreatePost} />
-                <Route path='/blos' component={List} />
-                <Route path='/blog/show/:id' component={Show} />
               </Routes>  
             </AuthProvider>
         </Router>
