@@ -5,6 +5,8 @@ import { useAuthValue } from '../Auth/AuthContext'
 import { signInWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../../App.css";
+import { Row } from "react-bootstrap"
+import { Input } from 'reactstrap'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -33,28 +35,36 @@ function Login() {
 
   return(
     <div className='center'>
-      <div className='auth'>
+      <br />
+      <br />
+      <hr/>
+      <div className='login login__container'>
         <h1>Log in</h1>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={login} name='login_form'>
-          <input 
-            type='email' 
-            value={email}
-            required
-            placeholder="Enter your email"
-            onChange={e => setEmail(e.target.value)}/>
-
-          <input 
-            type='password'
-            value={password}
-            required
-            placeholder='Enter your password'
-            onChange={e => setPassword(e.target.value)}/>
-
-          <button type='submit'>Login</button>
+          <Row>
+            <Input 
+              type='email' 
+              value={email}
+              required
+              placeholder="Enter your email"
+              onChange={e => setEmail(e.target.value)}/>
+            <br />
+            <br/>
+            <Input 
+              type='password'
+              value={password}
+              required
+              placeholder='Enter your password'
+              onChange={e => setPassword(e.target.value)}/>
+          </Row>
+          <br/>
+          <button className="btn btn-outline-success" type='submit'>Login</button>
         </form>
         <p>
           Don't have and account? 
+        </p>
+        <p>
           <Link to='/register'>Create one here</Link>
         </p>
       </div>

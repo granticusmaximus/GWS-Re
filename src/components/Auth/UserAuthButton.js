@@ -4,7 +4,7 @@ import { auth } from "../Auth/firebase";
 import logo from '../../assets/img/logo.png'
 
 function LoggedIn(props) {
-  return <a href='/dashboard' className='btn btn-outline-success'>Dashboard</a>;
+  return <a href='/dashboard' className='btn btn-outline-warning'>Dashboard</a>;
 }
 
 function Guest(props) {

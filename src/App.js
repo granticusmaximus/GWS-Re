@@ -7,16 +7,15 @@ import VerifyEmail from './components/User/VerifyEmail'
 import Login from './components/User/Login'
 import Home from './components/Front/Home'
 import {useState, useEffect} from 'react'
-import {AuthProvider} from './components/Auth/AuthContext'
+import { AuthProvider } from './components/Auth/AuthContext'
+import { auth } from './components/Auth/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
 import NavMenu from './components/UI/NavMenu'
 import {Container} from 'react-bootstrap'
-import Reset from './components/User/Reset'
 import About from './components/Front/About'
 import Footer from './components/UI/Footer'
 import Contact from './components/Front/Contact'
 import Project from './components/Front/Projects'
-import {auth} from './components/Auth/firebase'
-import {onAuthStateChanged} from 'firebase/auth'
 
 function App() {
 
@@ -36,13 +35,12 @@ function App() {
       <NavMenu />
       <Container>
         <Router>
-            <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
+          <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
               <Routes>
                 <Route exact path='/' element={<Home/>}/>
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
-                <Route path='/verify-email' element={<VerifyEmail />} /> 
-                <Route path='/reset' element={<Reset/>} />
+                <Route path='/verify-email' element={<VerifyEmail />} />
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />

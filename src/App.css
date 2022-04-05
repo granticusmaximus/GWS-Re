@@ -93,10 +93,11 @@ html {
   background-color: #dcdcdc;
   padding: 30px;
   position: absolute;
-  margin-top:70px;
+  margin-top:45px;
   left: 0;
   top: 0;
   bottom: 0;
+  height: 100vh;
 }
 
 .dashboard__btn {
@@ -176,6 +177,7 @@ code {
   padding: 20px;
   text-align: center;
   margin:auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .login__container{
@@ -183,26 +185,6 @@ code {
   flex-direction: column;
   gap: 15px;
   margin: auto;
-}
-
-.auth__success{
-  padding: 10px 0;
-  background-color: hsl(147, 79%, 87%);
-  margin-bottom: 20px;
-}
-
-.auth__error{
-  padding: 10px 0;
-  background-color: hsl(0, 79%, 87%);
-  margin-bottom: 20px;
-}
-
-.auth form > input{
-  height: 40px;
-  font-size: 16px;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #dcdcdc;
 }
 
 .login__textBox {
@@ -237,19 +219,6 @@ code {
   margin:auto;
 }
 
-.reset__container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: auto;
-}
-
-.reset__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
 .jumbotron-fluid {
   padding-right: 0;
   padding-left: 0;
@@ -257,18 +226,6 @@ code {
   background-color: #0b0d63 !important;
 }
 
-.reset__btn {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border: none;
-  color: white;
-  background-color: black;
-}
-
-.reset div {
-  margin-top: 7px;
-}
 .register {
   width: 90%;
   max-width: 400px;
@@ -276,6 +233,7 @@ code {
   padding: 20px;
   text-align: center;
   margin:auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .register__container {
@@ -308,12 +266,20 @@ code {
   margin-top: 7px;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 .footer {
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
-  margin-top: -100px;
+  width: 100%;
+  height: 50px;
   padding: 1rem;
   background-color: #94633b;
   text-align: center;
