@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
-import MenuGreeting from '../Auth/UserAuthButton';
+import MenuGreeting from '../../Auth/UserAuthButton';
 
 
 class NavMenu extends Component {
@@ -12,7 +12,7 @@ class NavMenu extends Component {
           expand="lg"
           style={{
             maxHeight: '75px',
-            backgroundColor: '#94633b',
+            backgroundColor: 'black',
             boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
           }}
         >
@@ -20,7 +20,7 @@ class NavMenu extends Component {
             <Navbar.Brand
               href="/"
               style={{
-                color: 'white'
+                color: '#a58158'
               }}>
               GWS
             </Navbar.Brand>
@@ -34,7 +34,7 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/"
                   style={{
-                    color: 'white'
+                    color: '#a58158'
                   }}
                 >
                   Home
@@ -42,7 +42,7 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/about"
                   style={{
-                    color: 'white'
+                    color: '#a58158'
                   }}
                 >
                   About
@@ -50,7 +50,7 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/contact"
                   style={{
-                    color: 'white'
+                    color: '#a58158'
                   }}
                 >
                   Contact
@@ -58,7 +58,7 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/projects"
                   style={{
-                    color: 'white'
+                    color: '#a58158'
                   }}
                 >
                   Projects
@@ -66,7 +66,7 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/blog"
                   style={{
-                    color: 'white'
+                    color: '#a58158'
                   }}
                 >
                   Blog

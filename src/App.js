@@ -1,21 +1,22 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Dashboard from './components/User/Dashboard'
-import Register from './components/User/Register'
-import VerifyEmail from './components/User/VerifyEmail'
-import Login from './components/User/Login'
+import Dashboard from './user/Dashboard'
+import Register from './user/Register'
+import VerifyEmail from './user/VerifyEmail'
+import Login from './user/Login'
 import Home from './components/Front/Home'
 import {useState, useEffect} from 'react'
-import { AuthProvider } from './components/Auth/AuthContext'
-import { auth } from './components/Auth/firebase'
+import { AuthProvider } from './config/AuthContext'
+import { auth } from './config/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
-import NavMenu from './components/UI/NavMenu'
+import NavMenu from './UI/NavMenu'
 import {Container} from 'react-bootstrap'
 import About from './components/Front/About'
-import Footer from './components/UI/Footer'
+import Footer from './UI/Footer'
 import Contact from './components/Front/Contact'
 import Project from './components/Front/Projects'
+import AuthError from './components/error.component'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/projects' element={<Project />} />
+                <Route path='/auth-error' element={<AuthError/>} />
               </Routes>  
             </AuthProvider>
         </Router>
