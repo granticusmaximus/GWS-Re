@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Dashboard from './user/Dashboard'
+import Dashboard from './pages/dashboard.pages'
 import Register from './user/Register'
 import VerifyEmail from './user/VerifyEmail'
 import Login from './user/Login'

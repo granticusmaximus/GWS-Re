@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { HomePage, LoginPage, LOGIN_ROUTE, HOMEPAGE_ROUTE, DASHBOARD_ROUTE, DashboardPage, DASHBOARD_EDIT_ROUTE, POSTPAGE_ROUTE, PostPage } from '../_pages';
-import { history } from '../_config';
-import { withFirebase, withSessionProvider, withSession, ToastContext, ToastNotifier } from '../_contexts';
+import { HomePage, LoginPage, LOGIN_ROUTE, HOMEPAGE_ROUTE, DASHBOARD_ROUTE, DashboardPage, DASHBOARD_EDIT_ROUTE, POSTPAGE_ROUTE, PostPage } from '../pages';
+import { history } from '../config';
+import { withFirebase, withSessionProvider, withSession, ToastContext, ToastNotifier } from '../context';
 import { ProtectedRoute } from './protected-route.component';
 import { Navbar } from './navbar.component';
 import { Footer } from './footer.component';
