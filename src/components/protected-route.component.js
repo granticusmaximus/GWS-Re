@@ -1,5 +1,5 @@
 import React from 'react';
-import { withSession } from '../contexts';
+import { withSession } from '../context';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { LOGIN_ROUTE } from '../pages';
 import { Loader } from './loader.component';

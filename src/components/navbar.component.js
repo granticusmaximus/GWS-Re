@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HOMEPAGE_ROUTE, DASHBOARD_ROUTE } from '../pages';
-import { withFirebase } from '../contexts';
+import { HOMEPAGE_ROUTE, DASHBOARD_ROUTE, ABOUT_ROUTE, CONTACT_ROUTE, PROJECT_ROUTE } from '../pages';
+import { withFirebase } from '../context';
 
 export function NavbarComponent({ toggleSidebar, firebase }) {
     return (
@@ -9,7 +9,9 @@ export function NavbarComponent({ toggleSidebar, firebase }) {
             <Link to={HOMEPAGE_ROUTE} className="text-2xl py-2 px-4 font-bold title">
                 {process.env.REACT_APP_NAME}
             </Link>
-
+            <Link to={ABOUT_ROUTE} /> 
+            <Link to={CONTACT_ROUTE} />
+            <Link to={PROJECT_ROUTE} />
             <div>
                 {
                     firebase.auth.currentUser &&

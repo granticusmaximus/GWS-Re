@@ -1,4 +1,4 @@
-import { Row, Col, Container, Card } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
