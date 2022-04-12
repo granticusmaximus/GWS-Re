@@ -1,5 +1,4 @@
-import { Row, Col, Container, Card } from 'react-bootstrap'
-import '../../App.css';
+import { Row, Col, Card } from 'react-bootstrap'
 import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
@@ -7,14 +6,33 @@ import webhost from '../../assets/img/webhost.jpeg'
 import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
 import GitHubCalendar from 'react-github-calendar';
 import Image from "react-bootstrap/Image"
-import ImageGrid from '../UI/ProgImgGrid'
+import ImageGrid from '../components/progimggid.component'
 import logo from '../../assets/img/logo.png'
 
-function Home() {
+export const HOMEPAGE_ROUTE = '/';
 
+const randomUnsplash = () => {
+  const splashes = [
+      "https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80",
+      "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+      "https://images.unsplash.com/photo-1562839492-20a189fafbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1422564030440-1ecae6e21f67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80",
+      "https://images.unsplash.com/photo-1543096757-a42d5d384910?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80"
+  ]
+
+  return splashes[Math.floor(Math.random() * splashes.length)];
+}
+
+function Home({ blogs, toggleSidebar }) {
   return (
-    <div className="App">
-        <br />
+    <div className="HomePage">
+      <div className="my-5 text-center">
+                        <input
+                            className="blog-search rounded border px-4 py-2 focus:outline-none"
+                            placeholder="Search blogs..."
+                            value={query} onChange={event => setQuery(event.target.value)} />
+      </div>
       <Image src={logo} width={175} roundedCircle />
         <h3>Welcome to my website!</h3>
         <h1>
@@ -76,7 +94,29 @@ function Home() {
         </center>
         <br/>
         <hr/>
-        <p>This section will show latest blog posts</p> 
+        <div className="blog-card-holder">
+                        {
+                            blogs.length === 0 ?
+                                <div className="text-center py-5">Nothing here!</div> :
+                                (query.trim().length === 0 ? blogs.filter(b => b.isPublished) : blogs.filter(b => b.isPublished && b.title.toLowerCase().includes(query.trim().toLowerCase()))) // filtering blogs if filter not empty
+                                    .map((blog, i) => {
+                                        const image = blog.image || randomUnsplash();
+                                        return (
+                                            <Link className="blog-card" key={i} to={blog.url}>
+                                                <div className="blurred-bg" style={{ backgroundImage: 'url(' + image + ')' }}></div>
+                                                <div className="blog-image">
+                                                    <img
+                                                        src={image}
+                                                        alt={blog.title} />
+                                                </div>
+                                                <div className="blog-title">
+                                                    {blog.title}
+                                                </div>
+                                            </Link>
+                                        )
+                                    })
+                        }
+          </div>
         <hr />
         <br/>
         <hr/>

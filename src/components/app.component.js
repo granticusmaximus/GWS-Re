@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { HomePage, LoginPage, LOGIN_ROUTE, HOMEPAGE_ROUTE, DASHBOARD_ROUTE, DashboardPage, DASHBOARD_EDIT_ROUTE, POSTPAGE_ROUTE, PostPage } from '../_pages';
-import { history } from '../_config';
-import { withFirebase, withSessionProvider, withSession, ToastContext, ToastNotifier } from '../_contexts';
+import { LOGIN_ROUTE, HOMEPAGE_ROUTE, DASHBOARD_ROUTE, DashboardPage, DASHBOARD_EDIT_ROUTE, POSTPAGE_ROUTE, PostPage, Login } from '../pages';
+import { history } from '../config';
+import { withFirebase, withSessionProvider, withSession, ToastContext, ToastNotifier } from '../context';
 import { ProtectedRoute } from './protected-route.component';
 import { Navbar } from './navbar.component';
 import { Footer } from './footer.component';
 import { Loader } from './loader.component';
+import About from '../pages/about.page';
+import Contact from '../pages/contact.page';
+import Project from '../pages/projects.page';
+import Home from '../pages/home.page';
 
 console.log(process.env.REACT_APP_LOL);
 
@@ -78,10 +82,19 @@ function AppComponent({ firebase, user }) {
                             <Switch>
                                 <Route
                                     path={LOGIN_ROUTE} exact
-                                    component={LoginPage} />
+                                    component={Login} />
+                                <Route
+                                    path={ABOUT_ROUTE} exact
+                                    component={About} />
+                                <Route
+                                    path={CONTACT_ROUTE} exact
+                                    component={Contact} />
+                                <Route
+                                    path={PROJECT_ROUTE} exact
+                                    component={Project} />
                                 <Route
                                     path={HOMEPAGE_ROUTE} exact
-                                    render={props => <HomePage blogs={blogs} {...props} toggleSidebar={toggleSidebar} />} />
+                                    render={props => <Home blogs={blogs} {...props} toggleSidebar={toggleSidebar} />} />
                                 <ProtectedRoute
                                     path={DASHBOARD_ROUTE} exact
                                     isAuthChecked={isAuthChecked}

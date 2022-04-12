@@ -5,6 +5,8 @@ import aboutPic from '../../assets/img/grantnwife.jpeg'
 import CertificateGrid from '../UI/CertImages';
 import { ImageViewer } from "react-image-viewer-dv"
 
+export const ABOUT_ROUTE = '/about';
+
 class About extends Component {
   render() {
     return (
