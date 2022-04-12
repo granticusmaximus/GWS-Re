@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import pdf from '../../assets/pdf/gwresume.pdf'
 import aboutPic from '../../assets/img/grantnwife.jpeg'
-import CertificateGrid from '../UI/CertImages';
+import CertificateGrid from '../components/UI/CertImages';
 import { ImageViewer } from "react-image-viewer-dv"
 
-export const ABOUT_ROUTE = '/about';
 
 class About extends Component {
   render() {

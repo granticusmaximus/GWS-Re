@@ -3,7 +3,6 @@ import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export const CONTACT_ROUTE = '/contact';
 
 export default function Contact() {
   const notify = () => toast.success("Email has been sent!");

@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { withFirebase, SessionContext } from '../context';
-import { history } from '../config';
 import { Redirect } from 'react-router-dom';
-import { DASHBOARD_ROUTE } from './dashboard.page';
 import { Loader } from '../components';
 
-export const LOGIN_ROUTE = '/login';
 
 function LoginPageComponent({ firebase }) {
 

@@ -9,7 +9,6 @@ import Image from "react-bootstrap/Image"
 import ImageGrid from '../components/progimggid.component'
 import logo from '../../assets/img/logo.png'
 
-export const HOMEPAGE_ROUTE = '/';
 
 const randomUnsplash = () => {
   const splashes = [

@@ -1,5 +1,8 @@
-import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+
 
 const config = {
   apiKey: process.NEXT_PUBLIC_API_KEY,
@@ -12,7 +15,8 @@ const config = {
   measurementId: process.NEXT_MEASUREMENT_ID
 };
 
-const app = initializeApp(config)
-const auth = getAuth(app)
+const app = initializeApp(config);
 
-export {auth}
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
