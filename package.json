@@ -27,8 +27,11 @@
     "react-scripts": "5.0.0",
     "react-slideshow-image": "^3.7.0",
     "react-toastify": "^8.2.0",
+<<<<<<< HEAD
     "reactstrap": "^9.0.1",
     "remarkable": "^2.0.1",
+=======
+>>>>>>> parent of 8ea4ee0 (Working unit of login)
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.2"
   },

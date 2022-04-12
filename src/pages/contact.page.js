@@ -25,7 +25,7 @@ export default function Contact() {
   }
 
     return (
-      <div className='page-container'>
+      <div>
         <br />
         <br />
         <hr />
