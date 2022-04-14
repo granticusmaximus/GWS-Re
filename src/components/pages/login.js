@@ -1,49 +1,27 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { Loader } from '../components';
+import React from "react";
+import { auth, provider } from "../config/firebase";
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
+function Login({ setIsAuth }) {
+  let navigate = useNavigate();
 
-function LoginPageComponent({ firebase }) {
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider).then((result) => {
+      localStorage.setItem("isAuth", true);
+      setIsAuth(true);
+      navigate("/");
+    });
+  };
 
-    const [error, setError] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-
-    const login = event => {
-        event.preventDefault();
-        const form = event.target;
-        const { email, password } = form;
-        setIsLoading(true);
-        firebase.auth.signInWithEmailAndPassword(email.value, password.value)
-            .then(response => {
-                history.push(DASHBOARD_ROUTE);
-            })
-            .catch(e => {
-                setError(e);
-                setIsLoading(false);
-            });
-    }
-    return (
-        <SessionContext.Consumer>
-            {
-                user => {
-                    return user ? <Redirect to={DASHBOARD_ROUTE} /> :
-                        isLoading ? <Loader /> :
-                        <div className="LoginPage">
-                            <div className="flex main-content justify-center items-center">
-                                <form className="w-64" onSubmit={login}>
-                                    <input className="w-full py-2 px-4 block mb-3 border focus:outline-none" placeholder="Email" type="email" name="email" />
-                                    <input className="w-full py-2 px-4 block mb-3 border focus:outline-none" placeholder="Password" type="password" name="password" />
-                                    {error && <span className="text-red-500 mb-3 block text-center">{error.message}</span>}
-                                    <button className="px-4 py-2 bg-orange-500 rounded text-white mx-auto block focus:outline-none" type="submit">
-                                        LOGIN
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                }
-            }
-        </SessionContext.Consumer>
-    )
+  return (
+    <div className="loginPage">
+      <p>Sign In With Google to Continue</p>
+      <button className="login-with-google-btn" onClick={signInWithGoogle}>
+        Sign in with Google
+      </button>
+    </div>
+  );
 }
 
-export const Login = withFirebase(LoginPageComponent);
+export default Login;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'

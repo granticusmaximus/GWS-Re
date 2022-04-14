@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import logo from '../../assets/img/logo.png'
+import React from "react";
+
 const Footer = () => {
-  const [moreText] = useState(false);
   return (
     <div class="footer">info@grantwatson.dev</div>
   );

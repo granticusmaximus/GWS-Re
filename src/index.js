@@ -1,18 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/tailwind.style.css';
-import './styles/main.style.scss';
-import reportWebVitals from './reportWebVitals';
-import { App } from './components';
-import { FirebaseContext } from './contexts';
-import { Firebase } from './config';
-const firebase = new Firebase();
+import React from 'react'
+import ReactDOM from 'react-dom'
+import reportWebVitals from './reportWebVitals'
+import App from './App'
+
 ReactDOM.render(
   <React.StrictMode>
-      <FirebaseContext.Provider value={firebase}>
-        <App />
-      </FirebaseContext.Provider>
+    <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
+
 reportWebVitals();

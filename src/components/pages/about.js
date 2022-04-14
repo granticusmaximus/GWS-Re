@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import pdf from '../../assets/pdf/gwresume.pdf'
 import aboutPic from '../../assets/img/grantnwife.jpeg'
-import CertificateGrid from '../components/UI/CertImages';
+import CertificateGrid from '../UI/CertificateGrid';
 import { ImageViewer } from "react-image-viewer-dv"
 
 

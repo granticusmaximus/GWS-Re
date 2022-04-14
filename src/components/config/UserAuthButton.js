@@ -1,10 +1,11 @@
-import React from 'react';
-import { useAuthState } from "react-firebase-hooks/auth";
-import { getAuth } from "./firebase";
+import React from 'react'
 import logo from '../../assets/img/logo.png'
+import { signOut } from "firebase/auth"
+import { auth } from "../config/firebase"
+import { useState } from "react"
 
 function LoggedIn(props) {
-  return <a href='/dashboard' className='btn btn-outline-success'>Dashboard</a>;
+  return <a href='/create-post' className='btn btn-outline-success'>Create Post</a>;
 }
 
 function Guest(props) {
@@ -12,11 +13,22 @@ function Guest(props) {
 }
 
 function MenuGreeting(props) {
-  const [user] = useAuthState(getAuth);
-  if (user) {
-    return <LoggedIn />;
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setIsAuth(false);
+      window.location.pathname = "/login";
+    });
+  };
+
+  if (!isAuth) {
+    return(
+      <Guest />
+    );
   } else {
-    return <Guest />
+    return <LoggedIn />
   };
 }
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import MenuGreeting from '../config/UserAuthButton';
 
-
 class NavMenu extends Component {
   render() {
     return (
@@ -34,7 +33,8 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/"
                   style={{
-                    color: 'white'
+                    color: 'white',
+                    fontSize: '15px'
                   }}
                 >
                   Home
@@ -42,7 +42,8 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/about"
                   style={{
-                    color: 'white'
+                    color: 'white',
+                    fontSize: '15px'
                   }}
                 >
                   About
@@ -50,7 +51,8 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/contact"
                   style={{
-                    color: 'white'
+                    color: 'white',
+                    fontSize: '15px'
                   }}
                 >
                   Contact
@@ -58,7 +60,8 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/projects"
                   style={{
-                    color: 'white'
+                    color: 'white',
+                    fontSize: '15px'
                   }}
                 >
                   Projects
@@ -66,7 +69,8 @@ class NavMenu extends Component {
                 <Nav.Link
                   href="/blog"
                   style={{
-                    color: 'white'
+                    color: 'white',
+                    fontSize: '15px'
                   }}
                 >
                   Blog
