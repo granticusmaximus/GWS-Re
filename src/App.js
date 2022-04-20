@@ -6,7 +6,6 @@ import NavMenu from './components/UI/NavMenu'
 import {Container} from 'react-bootstrap'
 import Footer from './components/UI/Footer'
 import Home from './components/pages/Home'
-import Login from './components/pages/Account/Login'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Project from './components/pages/Projects'
@@ -14,7 +13,6 @@ import Blog from './components/pages/Blogs'
 import CreatePost from './components/pages/CreatePost'
 
 function App() {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   return (
     <div>
       <br/>
@@ -23,7 +21,7 @@ function App() {
         <Router>
               <Routes>
                 <Route exact path='/' element={<Home />}/>
-                <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+                {/* <Route path="/login" element={<Login setIsAuth={setIsAuth} />} /> */}
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/projects' element={<Project />} />

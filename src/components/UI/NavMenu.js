@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
-import MenuGreeting from '../config/UserAuthButton';
 
 class NavMenu extends Component {
   render() {
@@ -79,7 +78,6 @@ class NavMenu extends Component {
                 <Nav>
                   <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                      <MenuGreeting />
                     </Navbar.Text>
                   </Navbar.Collapse>
                 </Nav>
