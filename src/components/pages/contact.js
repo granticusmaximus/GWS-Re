@@ -2,6 +2,7 @@ import React from 'react'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Container } from 'react-bootstrap';
 
 
 export default function Contact() {
@@ -13,22 +14,23 @@ export default function Contact() {
   };
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     emailjs.sendForm('service_libv1nq', 'template_qbxfxzc', e.target, 'QUnmkZs8gBchyu6ck', e)
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
-    
+
   }
 
-    return (
-      <div>
-        <br />
-        <br />
-        <hr />
-        <center>
+  return (
+    <div>
+      <br />
+      <br />
+      <hr />
+      <center>
+        <Container>
           <div className='card'>
             <h1>Contact Form</h1>
             <p>
@@ -61,7 +63,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-        
+
               <div className="row">
                 <div className="col-md-12">
                   <textarea
@@ -84,11 +86,13 @@ export default function Contact() {
                     value="Send Message" />
                 </div>
               </div>
-          
+
             </form>
           </div>
-        </center>
-        <ToastContainer />
-      </div>
+        </Container>
+
+      </center>
+      <ToastContainer />
+    </div>
   );
 }

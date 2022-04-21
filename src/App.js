@@ -10,14 +10,12 @@ import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Project from './components/pages/Projects'
 import Blog from './components/pages/Blogs'
-import CreatePost from './components/pages/CreatePost'
 
 function App() {
   return (
     <div>
       <br/>
       <NavMenu />
-      <Container>
         <Router>
               <Routes>
                 <Route exact path='/' element={<Home />}/>
@@ -26,10 +24,9 @@ function App() {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/projects' element={<Project />} />
                 <Route path='/blogs' element={<Blog />} />
-                <Route path='/create-post' element={<CreatePost setIsAuth={isAuth} />} />
+                {/* <Route path='/create-post' element={<CreatePost setIsAuth={isAuth} />} /> */}
               </Routes>
         </Router>
-      </Container>
       <div className='bottom'>
         <Footer />
       </div>
