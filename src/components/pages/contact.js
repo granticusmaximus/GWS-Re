@@ -81,7 +81,7 @@ export default function Contact() {
                 <div className="col-md-12">
                   <input
                     type="submit"
-                    className="btn btn-success btn-send pt-2 btn-block "
+                    className="btn btn-primary btn-send pt-2 btn-block "
                     onClick={nodFunct}
                     value="Send Message" />
                 </div>

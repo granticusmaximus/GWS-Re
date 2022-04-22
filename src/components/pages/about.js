@@ -17,7 +17,7 @@ class About extends Component {
             <h1>
               About Grant Watson 
             </h1>
-            <a href={pdf} rel="noreferrer" target="_blank" className="btn btn-warning">Click here to view my resume</a>
+            <a href={pdf} rel="noreferrer" target="_blank" className="btn btn-outline-primary">Click here to view my resume</a>
           </center>
           <hr />
           <Container>

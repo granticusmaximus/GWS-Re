@@ -28,7 +28,7 @@ function Home() {
          <Container>
          <Row>
             <Col>
-              <Card className="home" style={{ width: '18rem' }}>
+              <div className='portfolioCard'>
                 <Card.Img variant="top" src={ux} />
                 <Card.Body>
                   <Card.Title>Web Design</Card.Title>
@@ -37,10 +37,10 @@ function Home() {
                     I work with most frameworks and technologies: Wordpress, ReactJS, C#, Blazor, VueJS, KnockoutJS and will love to work with you to design a beautiful website.
                   </Card.Text>
                 </Card.Body>
-              </Card>
+              </div>
             </Col>
             <Col>
-              <Card style={{ width: '18rem' }}>
+              <div className='portfolioCard'>
                 <Card.Img variant="top" src={webdev} />
                 <Card.Body>
                   <Card.Title>Web Development</Card.Title>
@@ -50,10 +50,10 @@ function Home() {
                     something developed that you can access anywhere with an internet connection, contact me today!
                   </Card.Text>
                 </Card.Body>
-              </Card>
+              </div>
             </Col>
             <Col>
-              <Card style={{ width: '18rem' }}>
+              <div className='portfolioCard'>
                 <Card.Img variant="top" src={webhost} />
                 <Card.Body>
                   <Card.Title>Web Hosting and Transcriptions</Card.Title>
@@ -64,7 +64,7 @@ function Home() {
                     I will be glad to offer my services to you!
                   </Card.Text>
                 </Card.Body>
-              </Card>
+              </div>
             </Col>
           </Row>
         </Container>
