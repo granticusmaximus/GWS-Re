@@ -1,9 +1,7 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { useState } from "react"
 import NavMenu from './components/UI/NavMenu'
-import {Container} from 'react-bootstrap'
 import Footer from './components/UI/Footer'
 import Home from './components/pages/Home'
 import About from './components/pages/About'

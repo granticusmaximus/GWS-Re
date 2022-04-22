@@ -1,5 +1,4 @@
 import { Row, Col, Card, Container } from 'react-bootstrap'
-import pdf from '../../assets/pdf/gwresume.pdf'
 import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
 import webhost from '../../assets/img/webhost.jpeg'
@@ -8,8 +7,6 @@ import GitHubCalendar from 'react-github-calendar';
 import ImageGrid from '../UI/ProgImgGrid'
 import Header from '../UI/Header'
 
-
-
 function Home() {
   return (
     <center>
@@ -17,9 +14,6 @@ function Home() {
       <br />
       <Header />
       <div className="HomePage">
-
-        
-        
         <hr />
         <p>
           I am on Upwork as well! If you have a project that you wish for me to start working on through UpWork, <a href='https://www.upwork.com/freelancers/~017cb997c760da76e7' rel="noreferrer" target="_blank">hire me</a> there!

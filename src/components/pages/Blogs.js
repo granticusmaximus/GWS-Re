@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from 'react';
 
-function Blog({ isAuth }) {
-
+class Blog extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    );
+  }
 }
 
 export default Blog;

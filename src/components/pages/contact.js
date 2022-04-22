@@ -90,7 +90,6 @@ export default function Contact() {
             </form>
           </div>
         </Container>
-
       </center>
       <ToastContainer />
     </div>

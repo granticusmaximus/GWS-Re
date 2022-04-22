@@ -1,7 +1,7 @@
-import { initializeApp } from "firebase/app";
+import app from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
+export const config = {
   apiKey: "AIzaSyBrFrkL6xHuUqLZs5uE2zlMgHFModT5aW0",
   authDomain: "gwsportfolio-22107.firebaseapp.com",
   databaseURL: "https://gwsportfolio-22107-default-rtdb.firebaseio.com",
@@ -13,5 +13,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+app.initializeApp(config);
 const analytics = getAnalytics(app);
+export default app

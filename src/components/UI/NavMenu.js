@@ -11,7 +11,8 @@ class NavMenu extends Component {
           style={{
             maxHeight: '75px',
             backgroundColor: '#94633b',
-            boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
+            boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
+            borderBottom: '3px solid #000'
           }}
         >
             <Container fluid>
@@ -66,7 +67,7 @@ class NavMenu extends Component {
                   Projects
                 </Nav.Link>
                 <Nav.Link
-                  href="/blog"
+                  href="/blogs"
                   style={{
                     color: 'white',
                     fontSize: '15px'
