@@ -5,6 +5,9 @@ import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
+    if (module.hot) {
+      module.hot.accept()
+    }
     <App />
   </React.StrictMode>,
   document.getElementById("root")

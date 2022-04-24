@@ -1,6 +1,7 @@
 {
   "name": "gws",
   "version": "0.1.0",
+  "keywords": ["grant watson", "developer", "software engineer", "freelance", "gws", "software", "b2b", "development", "tech", "C#", "iOS", "developer", "engineer", "flutter", "devOps", "dev"],
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -80,6 +81,12 @@
     ]
   },
   "devDependencies": {
-    "bootstrap": "^5.1.3"
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "bootstrap": "^5.1.3",
+    "parcel-bundler": "^1.12.5",
+    "react-hot-loader": "^4.13.0"
   }
 }

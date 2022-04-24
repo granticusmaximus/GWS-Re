@@ -8,7 +8,6 @@ import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Project from './components/pages/Projects'
 import Blog from './components/pages/Blogs'
-
 function App() {
   return (
     <div>
