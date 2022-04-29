@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
+import * as ROUTES from '../constants/routes'
 
 class NavMenu extends Component {
   render() {
@@ -17,7 +18,7 @@ class NavMenu extends Component {
         >
             <Container fluid>
             <Navbar.Brand
-              href="/"
+              href={ROUTES.HOME}
               style={{
                 color: 'white'
               }}>
@@ -31,7 +32,7 @@ class NavMenu extends Component {
                   navbarScroll
                 >
                 <Nav.Link
-                  href="/"
+                  href={ROUTES.HOME}
                   style={{
                     color: 'white',
                     fontSize: '15px'
@@ -40,7 +41,7 @@ class NavMenu extends Component {
                   Home
                 </Nav.Link>
                 <Nav.Link
-                  href="/about"
+                  href={ROUTES.ABOUT}
                   style={{
                     color: 'white',
                     fontSize: '15px'
@@ -49,7 +50,7 @@ class NavMenu extends Component {
                   About
                 </Nav.Link>
                 <Nav.Link
-                  href="/contact"
+                  href={ROUTES.CONTACT}
                   style={{
                     color: 'white',
                     fontSize: '15px'
@@ -58,7 +59,7 @@ class NavMenu extends Component {
                   Contact
                 </Nav.Link>
                 <Nav.Link
-                  href="/projects"
+                  href={ROUTES.PROJECTS}
                   style={{
                     color: 'white',
                     fontSize: '15px'
@@ -67,7 +68,7 @@ class NavMenu extends Component {
                   Projects
                 </Nav.Link>
                 <Nav.Link
-                  href="/blogs"
+                  href={ROUTES.BLOG}
                   style={{
                     color: 'white',
                     fontSize: '15px'
