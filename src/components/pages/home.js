@@ -7,7 +7,7 @@ import GitHubCalendar from 'react-github-calendar';
 import ImageGrid from '../UI/ProgImgGrid'
 import Header from '../UI/Header'
 
-function Home() {
+export default function Home() {
   return (
     <center>
       <br />
@@ -115,5 +115,3 @@ function Home() {
     </center>
   );
 }
-
-export default Home;
