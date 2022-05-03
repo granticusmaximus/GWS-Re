@@ -71,13 +71,6 @@ function Home() {
 
         </center>
         <br />
-        <hr />
-        <p>This section will show a few blog posts</p>
-        <hr />
-        <br />
-        <hr />
-        <p>This section will show latest merch/code to purchase</p>
-        <hr />
         <br />
         <hr />
         <h1>My Github Contributions</h1>
