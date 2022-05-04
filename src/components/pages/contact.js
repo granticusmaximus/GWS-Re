@@ -1,80 +1,78 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
-class Contact extends React.Component {
+const FORM_ENDPOINT = "https://public.herotofu.com/v1/adeb2310-cb60-11ec-a557-034a17e2da28"; // TODO - fill on the later step
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: ''
-    }
-  }
+const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 100);
+  };
 
-  handleSubmit(e){
-    e.preventDefault();
-    axios({
-      method: "POST",
-      url:"https://www.grantwatson.dev/send",
-      data:  this.state
-    }).then((response)=>{
-      if (response.data.status === 'success') {
-        alert("Message Sent.");
-        this.resetForm()
-      } else if (response.data.status === 'fail') {
-        alert("Message failed to send.")
-      }
-    })
-  }
-
-  resetForm(){
-    this.setState({
-      name: '',
-      email: '',
-      message: ''
-    })
-  }
-
-  render() {
+  if (submitted) {
     return (
-      <div className='container'>
-        <div className='card'>
-          <center>
-            <h2>Contact Grant Watson Today!</h2>
-          </center>
-          <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-            <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" className="form-control" id="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" className="form-control" id="email" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-            </div>
-            <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea className="form-control" rows="5" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-            </div>
-            <button type="submit" className="btn btn-primary">Submit Message</button>
-          </form>
-        </div>
-      </div>      
-      
+      <>
+        <div className="text-2xl">Thank you!</div>
+        <div className="text-md">We'll be in touch soon.</div>
+      </>
     );
   }
 
-  onNameChange(event) {
-	  this.setState({name: event.target.value})
-  }
+  return (
+    <Container>
+      <br />
+      <hr />
+      <center>
+        <h2>Contact Form</h2>
+        <p>Use this form to get in contact with Grant Watson if you need to get your business online, you need software updated and modified, or want to send a funny joke.</p>
+      </center>
+      
+      <form
+        action={FORM_ENDPOINT}
+        onSubmit={handleSubmit}
+        method="POST"
+        target="_blank"
+      >
+        <div className="mb-3 pt-0">
+          <input
+            type="text"
+            placeholder="Your name"
+            name="name"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            required
+          />
+        </div>
+        <div className="mb-3 pt-0">
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            required
+          />
+        </div>
+        <div className="mb-3 pt-0">
+          <textarea
+            placeholder="Your message"
+            name="message"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            required
+          />
+        </div>
+        <div className="mb-3 pt-0">
+          <button
+            className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="submit"
+          >
+            Send a message
+          </button>
+        </div>
+      </form>
+    </Container>
 
-  onEmailChange(event) {
-	  this.setState({email: event.target.value})
-  }
-
-  onMessageChange(event) {
-	  this.setState({message: event.target.value})
-  }
-}
+  );
+};
 
 export default Contact;

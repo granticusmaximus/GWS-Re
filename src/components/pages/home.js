@@ -101,7 +101,7 @@ export default function Home() {
           <h3
             style={{ color: 'white' }}
           >
-            Languages I have worked with section
+            Languages I have worked with.
           </h3>
         </div>
         <Container>

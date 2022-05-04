@@ -10,6 +10,7 @@ import Project from './components/pages/Projects'
 import * as ROUTES from './components/constants/routes'
 import AllPosts from './components/pages/AllPosts'
 import OnePost from './components/pages/OnePost';
+import ThankYou from './components/pages/ThankYou'
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
                 <Route path={ROUTES.CONTACT} element={<Contact />} />
                 <Route path={ROUTES.PROJECTS} element={<Project />} />
                 <Route path={ROUTES.BLOG} element={<AllPosts />} />
-                <Route path={ROUTES.SINGLE_POST} element={<OnePost/>} />
+                <Route path={ROUTES.SINGLE_POST} element={<OnePost />} />
+                <Route path={ROUTES.THANK_YOU} element={<ThankYou/>} />
               </Routes>
         </Router>
       <div className='bottom'>
