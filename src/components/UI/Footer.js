@@ -35,7 +35,9 @@ const Footer = () => {
           </div>
           <div className="col-sm-4">
             <div className="fin-float">
-              <p>© 2020 Grant Watson</p>
+              <p>
+                © {new Date().getFullYear()}, Built with love and GWS
+              </p>
               <p>All rights reserved</p>
             </div>
           </div>

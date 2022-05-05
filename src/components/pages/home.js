@@ -3,7 +3,7 @@ import ux from '../../assets/img/ux.jpeg'
 import webdev from '../../assets/img/webdev.jpeg'
 import webhost from '../../assets/img/webhost.jpeg'
 import softwareDev from '../../assets/img/SoftwareDeveloper.jpeg'
-import GitHubCalendar from 'react-github-calendar';
+import GitHubCalendar from 'react-github-calendar'
 import ImageGrid from '../UI/ProgImgGrid'
 import Header from '../UI/Header'
 
