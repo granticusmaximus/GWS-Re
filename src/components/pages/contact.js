@@ -33,7 +33,6 @@ const Contact = () => {
         action={FORM_ENDPOINT}
         onSubmit={handleSubmit}
         method="POST"
-        target="_blank"
       >
         <div className="mb-3 pt-0">
           <input

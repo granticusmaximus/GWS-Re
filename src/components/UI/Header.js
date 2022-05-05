@@ -31,7 +31,7 @@ class Header extends Component {
         >
           Welcome to my website!
         </h3>
-        <h1
+        <h2
           style={
             {
               color: 'white',
@@ -41,7 +41,7 @@ class Header extends Component {
           }
         >
           If you have not guessed it, my name is Grant Watson and I am a freelance software engineer for hire. To see my resume:
-        </h1>
+        </h2>
         <a href={pdf} rel="noreferrer" target="_blank" className="btn btn-primary">Click Here</a>
     </article>
     );
